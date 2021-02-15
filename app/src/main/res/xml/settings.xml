@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/prefs_category_video_settings_title">
+
+        <ListPreference
+            android:defaultValue="1080"
+            android:entries="@array/resolutionsArray"
+            android:entryValues="@array/resolutionValues"
+            android:key="@string/res_key"
+            android:summary="@string/preference_resolution_summary"
+            android:title="@string/preference_resolution_title" />
+
+        <ListPreference
+            android:defaultValue="30"
+            android:entries="@array/fpsArray"
+            android:entryValues="@array/fpsArray"
+            android:key="@string/fps_key"
+            android:summary="@string/preference_fps_summary"
+            android:title="@string/preference_fps_title" />
+
+        <ListPreference
+            android:defaultValue="7130317"
+            android:entries="@array/bitrateArray"
+            android:entryValues="@array/bitratesValue"
+            android:key="@string/bitrate_key"
+            android:summary="@string/preference_bit_summary"
+            android:title="@string/preference_bit_title" />
+
+        <ListPreference
+            android:defaultValue="auto"
+            android:entries="@array/orientationEntries"
+            android:entryValues="@array/orientationValues"
+            android:key="@string/orientation_key"
+            android:summary="@string/preference_orientation_summary"
+            android:title="@string/preference_orientation_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/prefs_category_audio_settings_title">
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/audioSettingsEntries"
+            android:entryValues="@array/audioSettingsValues"
+            android:key="@string/audiorec_key"
+            android:summary="@string/preference_audio_record_summary"
+            android:title="@string/preference_audio_record_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/prefs_category_save_options_title">
+        <com.coolapps.screenrecorder.folderpicker.FolderChooser
+            android:key="@string/savelocation_key"
+            android:negativeButtonText="@android:string/cancel"
+            android:positiveButtonText="@android:string/ok"
+            android:title="@string/preference_save_location_title" />
+        <ListPreference
+            android:defaultValue="yyyyMMdd_hhmmss"
+            android:entries="@array/filename"
+            android:entryValues="@array/filename"
+            android:key="@string/filename_key"
+            android:title="@string/preference_filename_format_title" />
+        <EditTextPreference
+            android:defaultValue="recording"
+            android:key="@string/fileprefix_key"
+            android:summary="Enter a prefix for the saved file name"
+            android:title="@string/preference_filename_prefix_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/prefs_category_theme_title">
+        <ListPreference
+            android:defaultValue="light_theme"
+            android:entries="@array/themeArray"
+            android:entryValues="@array/themeValues"
+            android:key="@string/preference_theme_key"
+            android:title="@string/preference_theme_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/prefs_category_recording_settings_title">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/preference_floating_control_key"
+            android:summary="@string/preference_floating_control_summary"
+            android:title="@string/preference_floating_control_title" />
+
+        <com.coolapps.screenrecorder.preferences.SeekBarPreference
+            android:defaultValue="100"
+            android:dependency="@string/preference_floating_control_key"
+            android:key="@string/preference_floating_control_size_key"
+            android:max="200"
+            android:persistent="true"
+            android:summary="@string/preference_floating_control_size_summary"
+            android:text=" DP"
+            android:title="@string/preference_floating_control_size_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/preference_camera_overlay_key"
+            android:summary="@string/preference_camera_overlay_summary"
+            android:title="@string/preference_camera_overlay_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/preference_enable_target_app_key"
+            android:summary="@string/preference_enable_target_app_summary"
+            android:title="@string/preference_enable_target_app_title" />
+
+        <com.coolapps.screenrecorder.preferences.AppPickerPreference
+            android:defaultValue="none"
+            android:dependency="@string/preference_enable_target_app_key"
+            android:key="@string/preference_app_chooser_key"
+            android:summary="@string/preference_app_chooser_summary"
+            android:title="@string/preference_app_chooser_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/prefs_category_experimental_title">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/preference_save_gif_key"
+            android:summary="@string/preference_save_gif_summary"
+            android:title="@string/preference_save_gif_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/preference_shake_gesture_key"
+            android:summary="@string/preference_shake_gesture_summary"
+            android:title="@string/preference_shake_gesture_title" />
+
+        <!--<Preference-->
+            <!--android:key="@string/preference_privacypolicy_key"-->
+            <!--android:summary="@string/preference_privacypolicy_summary"-->
+            <!--android:title="@string/preference_privacypolicy_title" />-->
+
+        <Preference
+            android:selectable="false"
+            android:summary=""
+            android:title=""
+            android:visibility="invisible" />
+        <Preference
+            android:selectable="false"
+            android:summary=""
+            android:title=""
+            android:visibility="invisible" />
+        <Preference
+            android:selectable="false"
+            android:summary=""
+            android:title=""
+            android:visibility="invisible" />
+    </PreferenceCategory>
+</PreferenceScreen>

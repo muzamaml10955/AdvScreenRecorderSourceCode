@@ -1,0 +1,96 @@
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.coolapps.screenrecorder"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 33
+        versionName "2.0.3"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    signingConfigs {
+        release
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            lintOptions {
+//                disable 'MissingTranslation'
+//            }
+//            signingConfig signingConfigs.release
+        }
+    }
+
+//    flavorDimensions "tier"
+//    productFlavors {
+//        playstore {
+//            dimension "tier"
+//            versionNameSuffix '-playstore'
+//            buildConfigField "String", "APP_PUB_KEY", getAppKey("app_pub_key")
+//        }
+//        fdroid {
+//            dimension "tier"
+//            versionNameSuffix '-fdroid'
+//        }
+//        playstoreDonate {
+//            dimension "tier"
+//            versionNameSuffix '-playstore Donate'
+//            applicationIdSuffix '.donate'
+//            buildConfigField "String", "APP_PUB_KEY", getAppKey("app_pub_key_donate")
+//        }
+//    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+//static def getAppKey(String property){
+//    Properties properties = new Properties()
+//    properties.load(new FileInputStream("app_pub_key"))
+//    return "\"" + properties.getProperty(property) +"\""
+//}
+//
+//if (project.hasProperty('RELEASE_STORE_FILE')) {
+//    println 'Using release keys'
+//    android.signingConfigs.release.storeFile new File(RELEASE_STORE_FILE)
+//    android.signingConfigs.release.storePassword RELEASE_STORE_PASSWORD
+//    android.signingConfigs.release.keyAlias RELEASE_KEY_ALIAS
+//    android.signingConfigs.release.keyPassword RELEASE_KEY_PASSWORD
+//} else {
+//    println 'Release keys not found. Falling back to default config'
+//    android.buildTypes.release.signingConfig = null
+//}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+//    implementation 'ly.count.android:sdk:18.08.1'
+    implementation 'life.knowledge4:k4l-video-trimmer:1.0'
+    implementation 'com.github.google:cameraview:3eaeac09a7f'
+    implementation 'com.github.MFlisar:changelog:1.1.2'
+    implementation 'com.github.topjohnwu.libsu:core:2.2.1'
+
+//    playstoreImplementation 'org.solovyev.android:checkout:1.2.1'
+//    playstoreDonateImplementation 'org.solovyev.android:checkout:1.2.1'
+
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.google.android.gms:play-services-ads:15.0.0'
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <attr name="toolbarStyle" format="reference" />
+    <attr name="tabBarStyle" format="reference" />
+    <attr name="menuDeleteIcon" format="reference" />
+    <attr name="menuSelectAllIcon" format="reference" />
+    <attr name="menuShareIcon" format="reference" />
+    <attr name="selected_app_check" format="reference"/>
+    <attr name="cardStyle" format="reference" />
+
+    <declare-styleable name="AdvancedPagerSlidingTabStrip">
+        <attr name="apTabIndicatorColor" format="color"/>
+        <attr name="apTabUnderlineColor" format="color"/>
+        <attr name="apTabDividerColor" format="color"/>
+        <attr name="apTabTextSelectColor" format="color"/>
+        <attr name="apTabIndicatorHeight" format="dimension"/>
+        <attr name="apTabUnderlineHeight" format="dimension"/>
+        <attr name="apTabDividerPadding" format="dimension"/>
+        <attr name="apTabPaddingLeftRight" format="dimension"/>
+        <attr name="apTabPaddingTopBottom" format="dimension"/>
+        <attr name="apTabScrollOffset" format="dimension"/>
+        <attr name="apTabBackground" format="reference"/>
+        <attr name="apTabShouldExpand" format="boolean"/>
+        <attr name="apTabTextAllCaps" format="boolean"/>
+        <attr name="apTabDrawMode" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="text" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

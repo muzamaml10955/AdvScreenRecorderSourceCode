@@ -1,0 +1,3 @@
+[submodule "magisk"]
+	path = magisk
+	url = https://gitlab.com/vijai/screencam-magisk-module.git
